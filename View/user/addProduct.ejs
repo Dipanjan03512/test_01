@@ -1,0 +1,78 @@
+<%- include('../Includes/header.ejs')%>
+
+<link rel="stylesheet" href="/CSS/addProduct.css">
+
+<%-include('../Includes/navbar.ejs')%>
+
+</head>
+<body>
+
+<main>
+    
+    <div class="form-container">
+        <h2 class="text-center">Add Product</h2>
+        <form action="/postAddItem" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" class="form-control" name="productName" placeholder="Enter product name" required>
+            </div>
+            <div class="form-group">
+                <label for="productDescription">Product Description</label>
+                <textarea class="form-control" name="productDescription" rows="3" placeholder="Enter product description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Product Price</label>
+                <input type="number" class="form-control" name="productPrice" placeholder="Enter product price" required>
+            </div>
+            <div class="form-group">
+                <label>Product Size</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="size" value="small">
+                    <label class="form-check-label" for="sizeSmall">Small</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="size" value="medium">
+                    <label class="form-check-label" for="sizeMedium">Medium</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="size" value="large">
+                    <label class="form-check-label" for="sizeLarge">Large</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="size" value="extraLarge">
+                    <label class="form-check-label" for="sizeExtraLarge">Extra Large</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Product Color</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="color" value="White">
+                    <label class="form-check-label" for="White">White</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="color" value="Green">
+                    <label class="form-check-label" for="Green">Green</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="color" value="Red">
+                    <label class="form-check-label" for="Red">Red</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="productImage">Product Image</label>
+                <input type="file" class="form-control-file" name="productImage" multiple>
+            </div>
+            <div class="form-group">
+                <label for="productCategory">Product Category</label>
+                <select class="form-control" name="productCategory">
+                    <option>Select category</option>
+                    <option value="Formal">Formal</option>
+                    <option value="Casual">Casual</option>
+                </select>
+            </div>
+            <input type="submit" value="submit" class="btn btn-primary">
+</main>
+
+
+<%-include('../Includes/footer.ejs')%>
